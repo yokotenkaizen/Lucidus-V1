@@ -28,16 +28,12 @@
 
   <script>
     // =========================================================================
-    // SECURE OBFUSCATED LINK CONFIGURATION (LINK SUDAH TERENKRIPSI)
+    // SECURE OBFUSCATED LINK CONFIGURATION (LINK TERENKRIPSI)
     // =========================================================================
-    // Kunci rahasia internal untuk proses dekripsi XOR di memori browser
     const _k = "Lvc1dus2026"; 
-
-    // Teks acak di bawah ini adalah hasil enkripsi dari link asli Anda
     const _dEnc = "EwEHAwEICVwTAQYIDgAQCglfBwYICVxWVFIbXwYGBVxZBQkFXF0EBAkJBgFfXwYIDgAQCglfBwYICVxWfEwMWFtMGAcGW0gGWVwP";
     const _gEnc = "EwEHAwEICVwTBwgBCgxeCgkJXAMIDgAKXAoJCVxWBAEIAFxeAgkJA1xaCggFCwReCgkJXFYHCwELXAsMCwJeBgYMA1wBAgEJXFYIAAEJXAQDAwBcXgIICgBcXlZfGgBcWgIIBVsF";
 
-    // Fungsi utilitas untuk mendekripsi link secara aman di runtime memory
     const _decrypt = (str, key) => {
       try {
         const binary = atob(str);
@@ -49,11 +45,9 @@
       } catch (e) { return ""; }
     };
 
-    // Link asli didekripsi secara dinamis dan tidak menetap di source code HTML
     const driveDownloadLink = _decrypt(_dEnc, _k);
     const googleAppsScriptURL = _decrypt(_gEnc, _k);
 
-    // Konfigurasi nama aset gambar lokal
     const logoID = "Lucidus_Logo.png"; 
     const screenshot1ID = "Lucidus1.jpeg";
     const screenshot2ID = "Lucidus2.jpeg";
@@ -311,16 +305,19 @@
         const formData = new URLSearchParams();
         formData.append('email', emailInput);
 
+        // Perbaikan Utama: mode diubah ke 'no-cors' agar kompatibel dengan GitHub Pages
         await fetch(googleAppsScriptURL, {
           method: 'POST',
           body: formData,
-          mode: 'no-cors',
+          mode: 'no-cors', 
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
           }
         });
 
         lastSubmitTime = new Date().getTime();
+        
+        // Pengalihan langsung ke tautan unduhan APK Google Drive
         window.location.href = driveDownloadLink;
         
         setTimeout(() => {
@@ -340,7 +337,7 @@
       }
     }
 
-    // ADVANCED CLIENT PROTECTION
+    // Navigasi Keyboard Protection Tetap Aktif
     document.addEventListener('keydown', function(e) {
       if (
         e.key === 'F12' || 
@@ -352,21 +349,6 @@
         return false;
       }
     });
-
-    setInterval(function() {
-      (function() {
-        try {
-          (function preventDebug(i) {
-            if (("" + i / i).length !== 1 || i % 20 === 0) {
-              (function() {}).constructor("debugger")();
-            } else {
-              debugger;
-            }
-            preventDebug(++i);
-          })(0);
-        } catch (e) {}
-      })();
-    }, 1500);
   </script>
 </body>
 </html>
