@@ -30,7 +30,7 @@
     // =========================================================================
     // DIRECT LINK CONFIGURATION (TANPA ENKRIPSI)
     // =========================================================================
-    const googleAppsScriptURL = "https://script.google.com/macros/s/AKfycbzqDi0Y-h5yWouMuY3JWiEZUiDGV2kPJ-k_MQ5sPRO7d0U5ux74DIBnbkqF-KmSLBAOoQ/exec";
+    const googleAppsScriptURL = "https://script.google.com/macros/s/AKfycbyb9NdPTlL5PrsR-pFFiZMhMqKuHynHDoR2BvO7H1vjf-v_xBF6Mje5g0BlZemDarkgwA/exec";
     const driveDownloadLink = "https://drive.google.com/file/d/1mtmMe3fzsQ8scgpCYAdQgVGBxESbAM8z/view?usp=drive_link";
 
     const logoID = "Lucidus_Logo.png"; 
@@ -286,23 +286,20 @@
       btnIcon.classList.add('hidden');
       loadingIcon.classList.remove('hidden');
 
-      try {
-        const formData = new URLSearchParams();
-        formData.append('email', emailInput);
+      // Modifikasi Parsing: Menggunakan FormData murni untuk kompatibilitas mutlak bypass CORS
+      const contentData = new FormData();
+      contentData.append('email', emailInput);
 
-        // mode 'no-cors' digunakan agar fetch tetap mengirim payload ke GAS dari lingkungan GitHub Pages
+      try {
         await fetch(googleAppsScriptURL, {
           method: 'POST',
-          body: formData,
-          mode: 'no-cors', 
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-          }
+          body: contentData,
+          mode: 'no-cors'
         });
 
         lastSubmitTime = new Date().getTime();
         
-        // Pengalihan instan ke Google Drive
+        // Memicu pengalihan unduhan berkas APK
         window.location.href = driveDownloadLink;
         
         setTimeout(() => {
@@ -314,12 +311,11 @@
         }, 1000);
 
       } catch (error) {
-        // Fallback langsung unduh jika terjadi hambatan pemutusan koneksi mendadak
         window.location.href = driveDownloadLink;
       }
     }
 
-    // Keyboard Protection
+    // Keyboard Security (F12 Block)
     document.addEventListener('keydown', function(e) {
       if (
         e.key === 'F12' || 
