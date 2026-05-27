@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucidus - Temukan Kejernihan Anda</title>
+  
+  <link rel="icon" type="image/png" href="./img/Lucidus_Logo.png">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-touch-callout: none;
+    }
+    img {
+      pointer-events: none;
+      -webkit-user-drag: none;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#0F111A] text-slate-200 font-sans selection:bg-indigo-500 selection:text-white" oncontextmenu="return false;">
+
+  <script>
+    // =========================================================================
+    // SECURE OBFUSCATED LINK CONFIGURATION (LINK SUDAH TERENKRIPSI)
+    // =========================================================================
+    // Kunci rahasia internal untuk proses dekripsi XOR di memori browser
+    const _k = "Lvc1dus2026"; 
+
+    // Teks acak di bawah ini adalah hasil enkripsi dari link asli Anda
+    const _dEnc = "EwEHAwEICVwTAQYIDgAQCglfBwYICVxWVFIbXwYGBVxZBQkFXF0EBAkJBgFfXwYIDgAQCglfBwYICVxWfEwMWFtMGAcGW0gGWVwP";
+    const _gEnc = "EwEHAwEICVwTBwgBCgxeCgkJXAMIDgAKXAoJCVxWBAEIAFxeAgkJA1xaCggFCwReCgkJXFYHCwELXAsMCwJeBgYMA1wBAgEJXFYIAAEJXAQDAwBcXgIICgBcXlZfGgBcWgIIBVsF";
+
+    // Fungsi utilitas untuk mendekripsi link secara aman di runtime memory
+    const _decrypt = (str, key) => {
+      try {
+        const binary = atob(str);
+        let result = '';
+        for (let i = 0; i < binary.length; i++) {
+          result += String.fromCharCode(binary.charCodeAt(i) ^ key.charCodeAt(i % key.length));
+        }
+        return result;
+      } catch (e) { return ""; }
+    };
+
+    // Link asli didekripsi secara dinamis dan tidak menetap di source code HTML
+    const driveDownloadLink = _decrypt(_dEnc, _k);
+    const googleAppsScriptURL = _decrypt(_gEnc, _k);
+
+    // Konfigurasi nama aset gambar lokal
+    const logoID = "Lucidus_Logo.png"; 
+    const screenshot1ID = "Lucidus1.jpeg";
+    const screenshot2ID = "Lucidus2.jpeg";
+    const screenshot3ID = "Lucidus3.jpeg";
+    const screenshot4ID = "Lucidus4.jpeg";
+
+    const getDriveImageUrl = (id) => {
+      if(!id || id.includes("YOUR_")) return "";
+      return `./img/${id}`;
+    };
+  </script>
+
+  <nav class="container mx-auto px-6 py-6 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl overflow-hidden shadow-md flex items-center justify-center bg-[#F9F6EE]">
+        <img id="web-logo" src="" alt="Lucidus Logo" class="w-full h-full object-cover transition-opacity duration-300">
+      </div>
+      <span class="text-2xl font-bold tracking-wide text-white">Lucidus</span>
+    </div>
+    <button 
+      onclick="openModal()"
+      class="hidden md:flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-2.5 rounded-full font-medium transition-all duration-300"
+    >
+      <i data-lucide="cloud-download" class="w-5 h-5"></i>
+      <span>Unduh APK</span>
+    </button>
+  </nav>
+
+  <section class="container mx-auto px-6 pt-12 pb-16 text-center md:pt-20 md:pb-20 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-600/20 blur-[120px] rounded-full pointer-events-none"></div>
+
+    <div class="inline-flex items-center gap-2 bg-slate-800/60 border border-slate-700/80 px-4 py-1.5 rounded-full text-xs font-medium text-slate-300 mb-6 relative z-10">
+      <i data-lucide="play" class="w-3.5 h-3.5 text-emerald-400 fill-emerald-400"></i>
+      <span>Akan Hadir di <span class="text-white font-semibold">Google Play Store</span></span>
+    </div>
+
+    <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight relative z-10">
+      Temukan <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-300">Kejernihan</span> Anda.
+    </h1>
+    <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto relative z-10 leading-relaxed">
+      Jurnal harian pintar dengan analisis AI, sistem apresiasi diri, dan keamanan tingkat tinggi. Rekam aliran pikiran Anda 100% aman secara offline.
+    </p>
+    
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-4 relative z-10">
+      <button 
+        onclick="openModal()"
+        class="flex items-center justify-center gap-2 w-full sm:w-auto bg-indigo-500 hover:bg-indigo-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-[0_0_20px_rgba(99,102,241,0.3)] hover:shadow-[0_0_30px_rgba(99,102,241,0.5)] transform hover:-translate-y-1"
+      >
+        <i data-lucide="cloud-download" class="w-6 h-6"></i>
+        <span>Unduh Akses Awal (APK)</span>
+      </button>
+    </div>
+  </section>
+
+  <section class="container mx-auto px-6 py-12 relative z-10">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">Intip Tampilan Lucidus</h2>
+      <p class="text-slate-400">Desain antarmuka yang menenangkan, dirancang untuk fokus dan kenyamanan Anda.</p>
+    </div>
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-5xl mx-auto">
+      <div class="rounded-3xl overflow-hidden border-[6px] border-[#1C2030] shadow-2xl shadow-indigo-900/20 transform hover:-translate-y-2 transition-all duration-300">
+        <img id="ss-1" src="" alt="Tampilan Harian Lucidus" class="w-full h-auto object-cover bg-[#1C2030] min-h-[250px] transition-opacity duration-300">
+      </div>
+      <div class="rounded-3xl overflow-hidden border-[6px] border-[#1C2030] shadow-2xl shadow-indigo-900/20 transform hover:-translate-y-2 transition-all duration-300 md:mt-8">
+        <img id="ss-2" src="" alt="Tampilan Analisis AI Lucidus" class="w-full h-auto object-cover bg-[#1C2030] min-h-[250px] transition-opacity duration-300">
+      </div>
+      <div class="rounded-3xl overflow-hidden border-[6px] border-[#1C2030] shadow-2xl shadow-indigo-900/20 transform hover:-translate-y-2 transition-all duration-300">
+        <img id="ss-3" src="" alt="Tampilan Poin Kejernihan Lucidus" class="w-full h-auto object-cover bg-[#1C2030] min-h-[250px] transition-opacity duration-300">
+      </div>
+      <div class="rounded-3xl overflow-hidden border-[6px] border-[#1C2030] shadow-2xl shadow-indigo-900/20 transform hover:-translate-y-2 transition-all duration-300 md:mt-8">
+        <img id="ss-4" src="" alt="Tampilan Kalender Lucidus" class="w-full h-auto object-cover bg-[#1C2030] min-h-[250px] transition-opacity duration-300">
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#151824] py-24 mt-12">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Mengapa Memilih Lucidus?</h2>
+        <p class="text-slate-400 max-w-xl mx-auto">Dirancang khusus untuk menjaga privasi Anda sambil membantu membangun kebiasaan mindfulness yang berkelanjutan.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-[#1C2030] p-8 rounded-3xl border border-slate-800 hover:border-indigo-500/50 transition-colors group">
+          <div class="w-14 h-14 bg-indigo-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-indigo-500/20 transition-colors">
+            <i data-lucide="brain-circuit" class="text-indigo-400 w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Analisis by AI</h3>
+          <p class="text-slate-400 leading-relaxed">Dapatkan insight mendalam dari setiap entri jurnal Anda melalui kecerdasan buatan untuk memahami pola emosi.</p>
+        </div>
+        <div class="bg-[#1C2030] p-8 rounded-3xl border border-slate-800 hover:border-amber-500/50 transition-colors group">
+          <div class="w-14 h-14 bg-amber-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500/20 transition-colors">
+            <i data-lucide="sparkles" class="text-amber-400 w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Sistem Poin Apresiasi</h3>
+          <p class="text-slate-400 leading-relaxed">Kumpulkan 'Poin Kejernihan' dengan menyelesaikan tugas mindfulness seperti meditasi, membaca, dan peregangan.</p>
+        </div>
+        <div class="bg-[#1C2030] p-8 rounded-3xl border border-slate-800 hover:border-emerald-500/50 transition-colors group">
+          <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 transition-colors">
+            <i data-lucide="shield-check" class="text-emerald-400 w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Privasi Absolut</h3>
+          <p class="text-slate-400 leading-relaxed">Mode Offline Penuh. Data Anda dikunci dalam Private Offline Vault dengan proteksi PIN & Biometrik lokal.</p>
+        </div>
+        <div class="bg-[#1C2030] p-8 rounded-3xl border border-slate-800 hover:border-blue-500/50 transition-colors group">
+          <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
+            <i data-lucide="calendar-days" class="text-blue-400 w-7 h-7"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Riwayat & Tren</h3>
+          <p class="text-slate-400 leading-relaxed">Pantau kalender suasana hati (mood) harian Anda dan telusuri kembali aliran pikiran di masa lalu dengan mudah.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container mx-auto px-6 py-24 relative overflow-hidden">
+    <div class="bg-gradient-to-br from-[#1C2030] to-[#151824] rounded-[3rem] p-10 md:p-16 text-center border border-slate-800 relative z-10 overflow-hidden">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 blur-[80px] rounded-full pointer-events-none"></div>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Mulai Perjalanan Anda Hari Ini</h2>
+      <p class="text-slate-400 mb-10 max-w-xl mx-auto text-lg">
+        Unduh Lucidus sekarang dalam format APK atau tunggu peluncuran resminya di pasar aplikasi Android.
+      </p>
+      <div class="flex flex-col items-center gap-4 justify-center sm:flex-row">
+        <button 
+          onclick="openModal()"
+          class="inline-flex items-center justify-center gap-3 bg-white text-[#0F111A] hover:bg-slate-200 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 w-full sm:w-auto"
+        >
+          <span>Unduh Lucidus APK</span>
+          <i data-lucide="chevron-right" class="w-5 h-5"></i>
+        </button>
+        <div class="inline-flex items-center gap-2.5 bg-slate-800/80 border border-slate-700 text-slate-400 px-7 py-4 rounded-full font-medium text-base select-none w-full sm:w-auto justify-center">
+          <i data-lucide="play" class="w-5 h-5 text-slate-500 fill-slate-500"></i>
+          <span>Play Store (Coming Soon)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-slate-800/60 mt-10 py-12 bg-[#0A0C14]">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-500">
+      <div class="text-center md:text-left">
+        <p class="text-slate-400 font-medium">© 2026 Lucidus Journal. All rights reserved.</p>
+        <p class="mt-1 text-slate-500 text-xs"> Founded and develop by <span class="text-indigo-400 font-semibold">Julianto Bimo Shevchenko</span> </p>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+        <div class="flex items-center gap-1.5 bg-slate-800/40 border border-slate-800 px-3 py-1 rounded-full text-xs text-slate-400">
+          <i data-lucide="lock" class="w-3.5 h-3.5 text-indigo-400"></i>
+          <span>Secured & Maintained</span>
+        </div>
+        <a href="mailto:Bimojulianto24@gmail.com" class="flex items-center gap-2 text-slate-400 hover:text-indigo-400 transition-colors duration-200">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+          <span class="underline decoration-slate-700 hover:decoration-indigo-400">Bimojulianto24@gmail.com</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="downloadModal" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black/80 backdrop-blur-sm transition-opacity duration-300">
+    <div class="bg-[#1C2030] border border-slate-700 rounded-3xl p-8 max-w-md w-full mx-4 shadow-2xl relative transform transition-all">
+      <button onclick="closeModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+      
+      <div class="text-center mb-6">
+        <div class="w-16 h-16 bg-indigo-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+          <i data-lucide="mail" class="text-indigo-400 w-8 h-8"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-2">Akses Unduhan</h3>
+        <p class="text-slate-400 text-sm">Silakan masukkan alamat email Anda untuk mendapatkan tautan unduhan APK secara langsung.</p>
+      </div>
+
+      <form id="downloadForm" onsubmit="handleDownloadSubmit(event)">
+        <div style="display:none;">
+          <input type="text" id="security_honeypot" autocomplete="off" tabindex="-1">
+        </div>
+        <div class="mb-4">
+          <input 
+            type="email" 
+            id="userEmail" 
+            required 
+            placeholder="nama@email.com" 
+            class="w-full bg-[#0F111A] border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
+          >
+        </div>
+        <button 
+          type="submit" 
+          id="submitBtn"
+          class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 px-4 rounded-xl transition-colors flex justify-center items-center gap-2"
+        >
+          <span id="btnText">Lanjutkan Unduhan</span>
+          <i data-lucide="arrow-right" id="btnIcon" class="w-5 h-5"></i>
+          <svg id="loadingIcon" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    if(logoID) document.getElementById('web-logo').src = getDriveImageUrl(logoID);
+    if(screenshot1ID) document.getElementById('ss-1').src = getDriveImageUrl(screenshot1ID);
+    if(screenshot2ID) document.getElementById('ss-2').src = getDriveImageUrl(screenshot2ID);
+    if(screenshot3ID) document.getElementById('ss-3').src = getDriveImageUrl(screenshot3ID);
+    if(screenshot4ID) document.getElementById('ss-4').src = getDriveImageUrl(screenshot4ID);
+
+    lucide.createIcons();
+
+    const modal = document.getElementById('downloadModal');
+    let lastSubmitTime = 0;
+    
+    function openModal() {
+      modal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+      document.getElementById('downloadForm').reset();
+    }
+
+    async function handleDownloadSubmit(event) {
+      event.preventDefault();
+
+      const honeypot = document.getElementById('security_honeypot').value;
+      if (honeypot !== "") {
+        closeModal();
+        return;
+      }
+
+      const currentTime = new Date().getTime();
+      if (currentTime - lastSubmitTime < 10000) {
+        alert("Mohon tunggu sebentar sebelum mengirim ulang permintaan.");
+        return;
+      }
+      
+      const emailInput = document.getElementById('userEmail').value.trim();
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!emailRegex.test(emailInput)) {
+        alert("Format email tidak valid.");
+        return;
+      }
+
+      const btnText = document.getElementById('btnText');
+      const btnIcon = document.getElementById('btnIcon');
+      const loadingIcon = document.getElementById('loadingIcon');
+      const submitBtn = document.getElementById('submitBtn');
+
+      submitBtn.disabled = true;
+      btnText.innerText = "Memproses...";
+      btnIcon.classList.add('hidden');
+      loadingIcon.classList.remove('hidden');
+
+      try {
+        const formData = new URLSearchParams();
+        formData.append('email', emailInput);
+
+        await fetch(googleAppsScriptURL, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        });
+
+        lastSubmitTime = new Date().getTime();
+        window.location.href = driveDownloadLink;
+        
+        setTimeout(() => {
+          closeModal();
+          submitBtn.disabled = false;
+          btnText.innerText = "Lanjutkan Unduhan";
+          btnIcon.classList.remove('hidden');
+          loadingIcon.classList.add('hidden');
+        }, 1000);
+
+      } catch (error) {
+        alert("Terjadi kesalahan sistem. Silakan coba lagi.");
+        submitBtn.disabled = false;
+        btnText.innerText = "Lanjutkan Unduhan";
+        btnIcon.classList.remove('hidden');
+        loadingIcon.classList.add('hidden');
+      }
+    }
+
+    // ADVANCED CLIENT PROTECTION
+    document.addEventListener('keydown', function(e) {
+      if (
+        e.key === 'F12' || 
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C' || e.key === 'K')) || 
+        (e.ctrlKey && (e.key === 'U' || e.key === 'S' || e.key === 'P' || e.key === 'H')) ||
+        (e.metaKey && e.altKey && e.key === 'I')
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    setInterval(function() {
+      (function() {
+        try {
+          (function preventDebug(i) {
+            if (("" + i / i).length !== 1 || i % 20 === 0) {
+              (function() {}).constructor("debugger")();
+            } else {
+              debugger;
+            }
+            preventDebug(++i);
+          })(0);
+        } catch (e) {}
+      })();
+    }, 1500);
+  </script>
+</body>
+</html>
