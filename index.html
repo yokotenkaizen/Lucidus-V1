@@ -28,25 +28,10 @@
 
   <script>
     // =========================================================================
-    // SECURE OBFUSCATED LINK CONFIGURATION (LINK TERENKRIPSI)
+    // DIRECT LINK CONFIGURATION (TANPA ENKRIPSI)
     // =========================================================================
-    const _k = "Lvc1dus2026"; 
-    const _dEnc = "EwEHAwEICVwTAQYIDgAQCglfBwYICVxWVFIbXwYGBVxZBQkFXF0EBAkJBgFfXwYIDgAQCglfBwYICVxWfEwMWFtMGAcGW0gGWVwP";
-    const _gEnc = "EwEHAwEICVwTBwgBCgxeCgkJXAMIDgAKXAoJCVxWBAEIAFxeAgkJA1xaCggFCwReCgkJXFYHCwELXAsMCwJeBgYMA1wBAgEJXFYIAAEJXAQDAwBcXgIICgBcXlZfGgBcWgIIBVsF";
-
-    const _decrypt = (str, key) => {
-      try {
-        const binary = atob(str);
-        let result = '';
-        for (let i = 0; i < binary.length; i++) {
-          result += String.fromCharCode(binary.charCodeAt(i) ^ key.charCodeAt(i % key.length));
-        }
-        return result;
-      } catch (e) { return ""; }
-    };
-
-    const driveDownloadLink = _decrypt(_dEnc, _k);
-    const googleAppsScriptURL = _decrypt(_gEnc, _k);
+    const googleAppsScriptURL = "https://script.google.com/macros/s/AKfycbx3SpVuOrjxMsST9-quQlUMYDqQTVG4KFkO5U0ogCIpcr5NM2DdWJ7ovLywyLjPurSv6Q/exec";
+    const driveDownloadLink = "https://drive.google.com/file/d/1mtmMe3fzsQ8scgpCYAdQgVGBxESbAM8z/view?usp=drive_link";
 
     const logoID = "Lucidus_Logo.png"; 
     const screenshot1ID = "Lucidus1.jpeg";
@@ -305,7 +290,7 @@
         const formData = new URLSearchParams();
         formData.append('email', emailInput);
 
-        // Perbaikan Utama: mode diubah ke 'no-cors' agar kompatibel dengan GitHub Pages
+        // mode 'no-cors' digunakan agar fetch tetap mengirim payload ke GAS dari lingkungan GitHub Pages
         await fetch(googleAppsScriptURL, {
           method: 'POST',
           body: formData,
@@ -317,7 +302,7 @@
 
         lastSubmitTime = new Date().getTime();
         
-        // Pengalihan langsung ke tautan unduhan APK Google Drive
+        // Pengalihan instan ke Google Drive
         window.location.href = driveDownloadLink;
         
         setTimeout(() => {
@@ -329,15 +314,12 @@
         }, 1000);
 
       } catch (error) {
-        alert("Terjadi kesalahan sistem. Silakan coba lagi.");
-        submitBtn.disabled = false;
-        btnText.innerText = "Lanjutkan Unduhan";
-        btnIcon.classList.remove('hidden');
-        loadingIcon.classList.add('hidden');
+        // Fallback langsung unduh jika terjadi hambatan pemutusan koneksi mendadak
+        window.location.href = driveDownloadLink;
       }
     }
 
-    // Navigasi Keyboard Protection Tetap Aktif
+    // Keyboard Protection
     document.addEventListener('keydown', function(e) {
       if (
         e.key === 'F12' || 
